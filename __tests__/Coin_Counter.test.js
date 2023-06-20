@@ -1,4 +1,6 @@
 import CountCoins from './../src/Coin_Counter.js';
+import { CoinCountClosure } from './../src/Coin_Counter.js';
+import { CoinCount } from './../src/Coin_Counter.js';
 
 describe('CountCoins', () => {
   test('should return correct amount of quarters when given dollar amount.', () => {
@@ -20,5 +22,29 @@ describe('CountCoins', () => {
     const amountPennies = CountCoins(5.18);
     expect(amountPennies).toEqual("20 quarters 1 dimes 1 nickels 3 pennies")
   });
+});
+
+describe('CoinCountClosure', () => {
+  test('should return a string with correct amount of quarters, dimes, nickels and pennies', () => {
+    expect(CoinCountClosure(1.67)()).toEqual("6 quarters 1 dimes 1 nickels 2 pennies");
+  });
+
+  // test('should return an array with correct amount of dimes and remainder when given a dollar amount', () => {
+  //   const dimeCount = CoinCount(0.10);
+  //   const result = dimeCount(0.30) 
+  //   expect(dimeCount).toEqual([3, 0]')
+  // });
+
+   // test('should return an array with correct amount of dimes and remainder when given a dollar amount', () => {
+  //   const nickelCount = CoinCount(0.05);
+  //   const result = dimeCount(0.30) 
+  //   expect(dimeCount).toEqual([6, 0]')
+  // });
+
+   // test('should return an array with correct amount of dimes and remainder when given a dollar amount', () => {
+  //   const dimeCount = CoinCount(0.10);
+  //   const result = dimeCount(0.30) 
+  //   expect(dimeCount).toEqual([3, 0]')
+  // });
 
 })
